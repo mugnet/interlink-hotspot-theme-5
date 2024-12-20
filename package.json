@@ -1,0 +1,33 @@
+{
+  "name": "interlink-hotspot-theme",
+  "version": "1.0.0",
+  "description": "Interlink hotspot customized theme",
+  "main": "md5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:css && sass node_modules/bootstrap/scss:css",
+    "watch": "sass --watch src/scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mugnet/interlink-hotspot-theme-5.git"
+  },
+  "keywords": [
+    "interlink",
+    "hotspot",
+    "mikhmon",
+    "mikrotik"
+  ],
+  "author": "Job Ferrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mugnet/interlink-hotspot-theme-5/issues"
+  },
+  "homepage": "https://github.com/mugnet/interlink-hotspot-theme-5#readme",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

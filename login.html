@@ -1,0 +1,164 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<title id="title"></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<meta name="viewport" content="width=device-width; initial-scale=1, user-scalable=no;" />
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="icon" href="img/favicon.png" />
+</head>
+
+<body class="background">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8 mr-a" id="main" style="float:none;">
+				<div class="row">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-12">
+								<div class="box text-center"><img src="img/logo.png" 
+										style="border-radius: 5px; width:100%; max-width: 300px;padding:20px 0;" /></div>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-6">
+								<div class="card">
+									 
+									<div class="card-body">
+										$(if chap-id)
+										<form name="sendin" action="$(link-login-only)" method="post">
+											<input type="hidden" name="username" />
+											<input type="hidden" name="password" />
+											<input type="hidden" name="dst" value="$(link-orig)" />
+											<input type="hidden" name="popup" value="true" />
+										</form>
+
+										<script type="text/javascript" src="/md5.js"></script>
+										<script type="text/javascript">
+											<!-
+											function doLogin() {
+											document.sendin.username.value = document.login.username.value;
+											document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+											document.sendin.submit();
+											return false;
+											}
+											//-->
+										</script>
+										$(endif)
+
+										<div>
+											<form autocomplete="off" name="login" action="$(link-login-only)"
+												method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+												<input type="hidden" name="dst" value="$(link-orig)" />
+												<input type="hidden" name="popup" value="true" />
+											 
+													<div class="d-flex mt-3 justify-content-between">
+														<div class="box mr-2 pointer  px-3 py-2 w-100 text-center text-light" id="btnvcr"
+														onclick="voucher()">
+														<div class="icon-code"></div>
+														VOUCHER</div>
+											 
+													<div class="box mr-2 pointer px-3 py-2 text-center w-100 text-light" id="btnmem"
+														onclick="member()">
+														<div class="icon-user"></div>
+														
+														VIP</div>
+													</div>
+
+													
+												</a>
+												 
+
+													$(if error)<div class="alert alert-danger text-left p-2 mr-t-10">$(error)</div>
+										$(endif)
+
+										<input class="form-control form-control-lg mb-3 plch-center text-center" name="username"
+													type="text" value="$(username)" placeholder="Voucher" />
+												
+												<input class="form-control  form-control-lg mb-4 plch-center text-center" name="password"
+													type="hidden" placeholder="Password" />
+
+												<div class="text-center mr-t-10">
+													<button type="submit"
+														class="btn btn-primary btn-lg w-100">CONNECT</button>
+
+														<a href="plans.html" class="btn-rates">See Rates</a>
+												</div>
+											</form>
+										</div>
+
+										
+									</div>
+									<div class="card-footer text-center p-3">
+										$(if trial == 'yes')Try it for free click <a class="text-pink text-bold"
+											href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">here</a>$(endif)
+									</div>
+								</div>
+							</div>
+							 
+						</div>
+					</div>
+
+				 
+									 
+								 
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		<!--
+		document.login.username.focus();
+		document.getElementById('title').innerHTML = window.location.hostname + " > login";
+		
+		// login page 2 mode by Laksamadi Guko
+		var username = document.login.username;
+		var password = document.login.password;
+		var luser = document.getElementById("luser");
+		var lpass = document.getElementById("lpass");
+		var btnmem = document.getElementById("btnmem");
+		var btnvcr = document.getElementById("btnvcr");
+		
+		// set password = username
+		function setpass(){
+		  var user = username.value		
+		  password.value = user;
+		}
+			
+		username.onkeyup = setpass;
+			
+		btnmem.style.backgroundColor = "#73818f";
+		btnvcr.style.backgroundColor = "#0d3058";  
+		
+		// change to voucher mode
+		function voucher(){
+		  username.focus();
+		  username.onkeyup = setpass;
+		  username.placeholder = "Voucher";
+		  password.type = "hidden";
+		  password.value = username.value;  
+		  btnmem.style.backgroundColor = "#73818f";
+		  btnvcr.style.backgroundColor = "#0d3058";  
+		}
+		
+		// change to member mode
+		function member(){
+		  username.focus();
+		  username.onkeyup = "";
+		  username.placeholder = "Username";
+		  password.type= "password";
+		  password.value = "";
+		  btnmem.style.backgroundColor = "#0d3058"; 
+		  btnvcr.style.backgroundColor = "#73818f"; 
+		}
+		
+		//-->
+	</script>
+</body>
+
+</html>
